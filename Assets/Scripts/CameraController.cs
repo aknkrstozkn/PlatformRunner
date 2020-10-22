@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] Transform player;
+    [SerializeField] Transform player = null;
 
-    [SerializeField] float distanceToPlayer;
+    [SerializeField] float distanceToPlayer = 0.0f;
 
     // Update is called once per frame
     void Update()

@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 478825471}
   m_Layer: 0
   m_Name: StaticObstacle(1)
-  m_TagString: Untagged
+  m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 1232930901}
   m_Layer: 0
   m_Name: StaticObstacle(2)
-  m_TagString: Untagged
+  m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1261,6 +1261,7 @@ GameObject:
   - component: {fileID: 1570649768}
   - component: {fileID: 1570649767}
   - component: {fileID: 919132148442794998}
+  - component: {fileID: 919132148442794999}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1282,6 +1283,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _rotSpeed: 5
+--- !u!114 &919132148442794999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148442794997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8248020a3d54ccca598b9cf5b9f17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &940849337108415569
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1383,7 +1396,7 @@ GameObject:
   - component: {fileID: 1589327619150439813}
   m_Layer: 0
   m_Name: StaticObstacle
-  m_TagString: Untagged
+  m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1626,7 +1639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4200086175702906216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.95, y: -7.75, z: 30.28}
+  m_LocalPosition: {x: -6.47, y: -7.75, z: 30.28}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children: []
   m_Father: {fileID: 69269988}
@@ -1706,13 +1719,43 @@ GameObject:
   - component: {fileID: 3531495778486628306}
   - component: {fileID: 481250906947690615}
   - component: {fileID: 2398527920384726205}
+  - component: {fileID: 4200086175702906217}
+  - component: {fileID: 4200086175702906218}
   m_Layer: 0
   m_Name: HorizontalObstacle
-  m_TagString: Untagged
+  m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &4200086175702906217
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200086175702906216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.047330894
+  m_Height: 0.25618502
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.000000014901161, z: 0}
+--- !u!114 &4200086175702906218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200086175702906216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446cd9a5b4b2c790690820ff020b6e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisDistance: 24
+  speed: 0.5
 --- !u!4 &4360670080371099009
 Transform:
   m_ObjectHideFlags: 0
