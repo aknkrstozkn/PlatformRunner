@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000))
         {
-            if (hit.transform != null)
+            if (hit.transform != null && hit.transform.tag != "Player")
             {
                 _targetPos = hit.point;
                 transform.LookAt(_targetPos);
