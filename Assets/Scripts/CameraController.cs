@@ -5,14 +5,11 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] Transform player = null;
+    [SerializeField] float zDistance = 20.0f;
 
-    [SerializeField] float distanceToPlayer = 0.0f;
-
-    // Update is called once per frame
-    void Update()
-    {
+    private void LateUpdate() {
         transform.position = new Vector3(transform.position.x,
             transform.position.y, 
-            player.position.z - distanceToPlayer);
+            player.position.z - zDistance);
     }
 }

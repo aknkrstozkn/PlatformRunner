@@ -8,6 +8,11 @@ TagManager:
   - StartArea
   - Water
   - MandatoryObstacle
+  - Canvas
+  - WinText
+  - RotatingPlatform
+  - RotatingStick
+  - Obstacle
   layers:
   - Default
   - TransparentFX
