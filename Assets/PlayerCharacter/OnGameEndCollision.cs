@@ -23,6 +23,9 @@ public class OnGameEndCollision : MonoBehaviour
         {
             // Respawn at beginning
             transform.position = _startPos;
+            playerController.Init();
+            playerController._moveState = false;
+            transform.rotation = new Quaternion(0, 0, 0, 0);
         }
         else if(other.collider.CompareTag("Finish"))
         {
@@ -30,8 +33,8 @@ public class OnGameEndCollision : MonoBehaviour
             gameOverUI.SetActive(true);
             playerController.enabled = false;
             transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            //Vector3 targetPos = finishPlatform.transform.position;
-            //targetPos.y = transform.position.y;
+            playerController.Init();
+            
             playerController.SetTargetPosition(finishArea.transform.position);
         }
         else if(other.collider.CompareTag("RotatingPlatform"))
@@ -40,17 +43,10 @@ public class OnGameEndCollision : MonoBehaviour
         }
         else if(other.collider.CompareTag("RotatingStick"))
         {
+            playerController._moveState = false;
             
-            // If the object we hit is the enemy
-            // Calculate Angle Between the collision point and the player
-            //Vector3 dir = other.contacts[0].point - transform.position;
             Vector3 dir = other.transform.localPosition - transform.position;
-            // We then get the opposite (-Vector3) and normalize it
-            dir = -dir.normalized;
-
-            //var forceVec = other.GetComponent<Rigidbody>().velocity.normalized * pushForce;
-            // And finally we add force in the direction of dir and multiply it by force. 
-            // This will push back the player
+            dir = -dir.normalized;   
             GetComponent<Rigidbody>().AddForce(dir * pushForce, ForceMode.Impulse);
         }
     }

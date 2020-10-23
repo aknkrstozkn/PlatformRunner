@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -223,7 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 69269988}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HorizontalObstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 478825472}
   - component: {fileID: 478825471}
   - component: {fileID: 478825474}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StaticObstacle(1)
   m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
@@ -1172,7 +1172,7 @@ GameObject:
   - component: {fileID: 1232930902}
   - component: {fileID: 1232930901}
   - component: {fileID: 1232930904}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StaticObstacle(2)
   m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
@@ -1507,7 +1507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1317608417}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StaticObstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1540,7 +1540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1434403766}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rotators
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1723,8 +1723,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!65 &1627394896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1847,7 +1847,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1781982284}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1881,7 +1881,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1885643738}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HalfDonuts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2623,7 +2623,7 @@ GameObject:
   - component: {fileID: 3469287837922616958}
   - component: {fileID: 1711813855201792692}
   - component: {fileID: 919132147716633442}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RotatingStick
   m_TagString: RotatingStick
   m_Icon: {fileID: 0}
@@ -2679,6 +2679,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 8
   _rotSpeed: 5
+  _targetPos: {x: 0, y: 0, z: 0}
+  _moveState: 0
 --- !u!114 &919132148442794999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2693,7 +2695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1667473252}
   finishArea: {fileID: 1253339253}
-  pushForce: 20
+  pushForce: 15
 --- !u!1 &919132148806975543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,7 +2757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653207193613}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Half_Donut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2838,7 +2840,7 @@ GameObject:
   - component: {fileID: 3206441574220564226}
   - component: {fileID: 836375227169960904}
   - component: {fileID: 1196720165040509470}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RotatingStick (1)
   m_TagString: RotatingStick
   m_Icon: {fileID: 0}
@@ -2900,7 +2902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6713034926234751523}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stationary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2975,7 +2977,7 @@ GameObject:
   - component: {fileID: 940849337108415569}
   - component: {fileID: 1589327619150439813}
   - component: {fileID: 1589327619150439814}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StaticObstacle
   m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
@@ -3299,7 +3301,7 @@ GameObject:
   - component: {fileID: 4249700389511678731}
   - component: {fileID: 2448000573476268767}
   - component: {fileID: 2448000573476268768}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3438,7 +3440,7 @@ GameObject:
   - component: {fileID: 2147195389513572240}
   - component: {fileID: 8986700585022311651}
   - component: {fileID: 3410551035889897388}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Half_Donut_Side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3525,7 +3527,7 @@ GameObject:
   - component: {fileID: 937648012228872933}
   - component: {fileID: 7728818540667704298}
   - component: {fileID: 3608300217035860162}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Half_Donut_Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3621,7 +3623,7 @@ GameObject:
   - component: {fileID: 2398527920384726205}
   - component: {fileID: 4200086175702906217}
   - component: {fileID: 4200086175702906218}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HorizontalObstacle
   m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
@@ -3785,7 +3787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1204645097326604649}
   - component: {fileID: 4879453060395105538}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MovingStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4215,7 +4217,7 @@ GameObject:
   - component: {fileID: 6692330895847811025}
   - component: {fileID: 1448080858932343912}
   - component: {fileID: 7841853799021499222}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Half_Donut_Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4570,7 +4572,7 @@ GameObject:
   - component: {fileID: 2903291462964012300}
   - component: {fileID: 2939875451899094}
   - component: {fileID: 9141210205939070860}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Half_Donut_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
