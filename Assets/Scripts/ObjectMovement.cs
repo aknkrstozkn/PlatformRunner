@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleController : MonoBehaviour
+public class ObjectMovement : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] bool move = false;
+    [SerializeField] float sleepTime = 0;
     [SerializeField] Vector3 targetPos = new Vector3(0f, 0f, 0f);
     [SerializeField] float speed = 0.1f;
     [Header("Rotation")]
@@ -17,7 +18,7 @@ public class ObstacleController : MonoBehaviour
     private Vector3 _startPos;
     // Start is called before the first frame update
     void Start()
-    {   
+    {           
         _startPos = transform.localPosition;
     }
     // Update is called once per frame
@@ -34,6 +35,13 @@ public class ObstacleController : MonoBehaviour
         }
     }
 
+    IEnumerator waiter()
+    {
+        move = false;
+        yield return new WaitForSeconds(sleepTime);
+        move = true;
+    }
+
     public void Move(Vector3 targetPos, float speed)
     {
         timeMultp += speed * Time.deltaTime;
@@ -47,6 +55,11 @@ public class ObstacleController : MonoBehaviour
             _startPos = transform.localPosition;
 
             timeMultp = 0f;
+
+            if(sleepTime > 0)
+            {
+                StartCoroutine(waiter());
+            }
         }
     }
 

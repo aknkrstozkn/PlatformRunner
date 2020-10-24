@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class OnGameEndCollision : MonoBehaviour
-{
-    [SerializeField] GameObject gameOverUI = null;
+{   
+    [SerializeField] CameraController cameraController = null;
+    [SerializeField] GameObject wall = null; 
     [SerializeField] GameObject finishArea = null;
     [SerializeField] float pushForce = 30f;
     private Vector3 _startPos;
@@ -30,8 +31,8 @@ public class OnGameEndCollision : MonoBehaviour
         else if(other.collider.CompareTag("Finish"))
         {
             isGameOver = true;
-            gameOverUI.SetActive(true);
             playerController.enabled = false;
+            wall.SetActive(true);
             transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
             playerController.Init();
             
@@ -63,6 +64,8 @@ public class OnGameEndCollision : MonoBehaviour
         if (isGameOver)
         {
             playerController.Move();
+            cameraController.followPlayer = false;
+            cameraController.Move();
         }
     }
 
