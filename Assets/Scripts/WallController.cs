@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 public class WallController : MonoBehaviour
-{
+{    
     [SerializeField] GameObject gameOverUI = null;
     [SerializeField] Vector3 targetPos = Vector3.zero;
     [SerializeField] public float speed = 0;

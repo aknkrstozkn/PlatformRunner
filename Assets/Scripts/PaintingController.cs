@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PaintingController : MonoBehaviour
 {   
+    [SerializeField] GameObject platformParent = null;
+    [SerializeField] GameObject obstacleParent = null;
     [SerializeField] GameObject gameOverUI = null;
     [SerializeField] GameObject scoreText = null;
     [SerializeField] GameObject paintLabel = null;
@@ -26,6 +28,8 @@ public class PaintingController : MonoBehaviour
     void Start()
     {   
         transform.parent.GetComponent<WallController>().enabled = false;
+        platformParent.SetActive(false);
+        obstacleParent.SetActive(false);
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rect = GetComponent<RectTransform>();
         _sprite = _spriteRenderer.sprite;
