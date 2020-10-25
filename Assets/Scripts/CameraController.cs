@@ -11,9 +11,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] Vector3 targetPos = Vector3.zero;
     [SerializeField] float speed = 0.5f;
     [SerializeField] float rotSpeed = 0.5f;
-
-    public bool followPlayer = true;
-    public void Move()
+    
+    public void FollowWall()
     {
         var lookAtTarget = new Vector3(wall.transform.position.x - transform.position.x, 
                             wall.transform.position.y - transform.position.y,
@@ -27,12 +26,21 @@ public class CameraController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
     }
 
-    private void LateUpdate() {
-        if(followPlayer)
-        {
-            transform.position = new Vector3(transform.position.x,
+    public void FollowPlayer()
+    {
+        transform.position = new Vector3(transform.position.x,
                 transform.position.y, 
                 player.position.z - zDistance);
+    }
+
+    private void LateUpdate() {
+        if(GameController.state == GameController.State.Race)
+        {
+            FollowPlayer();
+        } 
+        else if(GameController.state == GameController.State.Paint)
+        {
+            FollowWall();
         }
         
     }

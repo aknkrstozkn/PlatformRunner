@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class PaintingController : MonoBehaviour
 {   
-    [SerializeField] GameObject platformParent = null;
-    [SerializeField] GameObject obstacleParent = null;
-    [SerializeField] GameObject gameOverUI = null;
+    [Header("User Interface")]
     [SerializeField] GameObject scoreText = null;
     [SerializeField] GameObject paintLabel = null;
     [SerializeField] GameObject countDownText = null;
+    
+    [Header("Brush")]
     [SerializeField] Color brushColor = Color.red;
     [SerializeField] int brushSize = 5;
+    
+    [Header("Other")]
     [SerializeField] Color wallColor = Color.grey;
     [SerializeField] float paintingCounter = 20f;
     private Texture2D _texture2D;
@@ -28,8 +30,6 @@ public class PaintingController : MonoBehaviour
     void Start()
     {   
         transform.parent.GetComponent<WallController>().enabled = false;
-        platformParent.SetActive(false);
-        obstacleParent.SetActive(false);
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rect = GetComponent<RectTransform>();
         _sprite = _spriteRenderer.sprite;
@@ -103,38 +103,42 @@ public class PaintingController : MonoBehaviour
 
     private void Update() {
         
+        UpdateCounter();
+
+        Checkwin();        
+        
+        CalcInput();
+    }
+
+    private void UpdateCounter()
+    {
         if(_isPainting && paintingCounter > 0)
         {
             paintingCounter -= Time.deltaTime;
             countDownText.GetComponent<TextMeshProUGUI>().text = ((int)paintingCounter).ToString();
-        }else if (_isPainting && paintingCounter <= 0)
+        }else if (paintingCounter <= 0)
         {
             transform.parent.GetComponent<WallController>().enabled = true;
             countDownText.SetActive(false);
         }
+    }
 
-
-        // Win
-        if (_pixelCount == _coloredPixels.Count)
-        {            
-            scoreText.SetActive(false);
-            gameOverUI.SetActive(true);
-            paintLabel.SetActive(false);
-            countDownText.SetActive(false);
-
-            transform.parent.GetComponent<WallController>().enabled = false;
-        }
-        
-        if (Input.GetMouseButtonDown(0))
-        {
-            Action();                     
-        }
-        else if(Input.GetMouseButton(0)) 
+    private void CalcInput()
+    {
+        if(Input.GetMouseButton(0)) 
         {
             if(Input.GetAxisRaw("Mouse X") != 0 || Input.GetAxisRaw("Mouse Y") != 0)
             {         
                 Action();                
             }
+        }
+    }
+
+    private void Checkwin()
+    {
+        if (_pixelCount == _coloredPixels.Count)
+        {            
+            GameController.state = GameController.State.Win;
         }
     }
 

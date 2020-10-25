@@ -5,7 +5,6 @@ using TMPro;
 
 public class WallController : MonoBehaviour
 {    
-    [SerializeField] GameObject gameOverUI = null;
     [SerializeField] Vector3 targetPos = Vector3.zero;
     [SerializeField] public float speed = 0;
 
@@ -33,10 +32,8 @@ public class WallController : MonoBehaviour
 
         if(_travelCount <= 0)
         {
-            gameOverUI.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = 
-                    "Game Over!";
-            gameOverUI.SetActive(true);
-            isActive = false;
+            GameController.state = GameController.State.GameOver;
+            transform.gameObject.SetActive(false);
         }
     }
 
@@ -53,7 +50,7 @@ public class WallController : MonoBehaviour
             _startPos = transform.localPosition;
 
             _timeMultp = 0f;
-            transform.GetChild(1).gameObject.SetActive(true);
+            transform.GetChild(0).gameObject.SetActive(true);
             _travelCount--;
         }
     }
