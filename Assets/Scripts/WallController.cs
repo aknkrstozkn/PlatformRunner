@@ -36,7 +36,7 @@ public class WallController : MonoBehaviour
             gameOverUI.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = 
                     "Game Over!";
             gameOverUI.SetActive(true);
-            this.enabled = false;
+            isActive = false;
         }
     }
 
