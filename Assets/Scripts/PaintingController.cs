@@ -49,7 +49,7 @@ public class PaintingController : MonoBehaviour
         }
         _texture2D.Apply();
 
-        paintLabel.GetComponent<TextMeshProUGUI>().text = "You have " + paintingCounter + " seconds to PAINT! befor Wall returns back!";
+        paintLabel.GetComponent<TextMeshProUGUI>().text = "You have " + paintingCounter + " seconds to PAINT! before Wall returns back!";
         paintLabel.SetActive(true);
         
     }
