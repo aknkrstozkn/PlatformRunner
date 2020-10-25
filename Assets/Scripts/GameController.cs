@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 public class GameController : MonoBehaviour
 {
+    [SerializeField] GameObject opponentParent = null;
     [SerializeField] GameObject player = null;
     [SerializeField] GameObject platformParent = null;
     [SerializeField] GameObject obstacleParent = null;
@@ -20,7 +21,19 @@ public class GameController : MonoBehaviour
         wall.SetActive(false);
         paintUI.SetActive(false);
         gameOverUI.SetActive(false);
-        placement = 1;
+        
+        CalcPlacement();
+    }
+
+    private void CalcPlacement()
+    {
+        var afterPlayer = 1;
+        for(int i = 0; i < opponentParent.transform.childCount; ++i)
+        {
+            afterPlayer += opponentParent.transform.GetChild(i).transform.position.z > player.transform.position.z ?
+                            1 : 0;
+        }
+        placement = afterPlayer;
     }
 
     private void Update()
