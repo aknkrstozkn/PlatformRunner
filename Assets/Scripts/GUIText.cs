@@ -4,6 +4,12 @@ using System.Collections;
 public class GUIText : MonoBehaviour
 {
 	float deltaTime = 0.0f;
+
+	void Start()
+    {
+        // Make the game run as fast as possible
+        Application.targetFrameRate = 300;
+    }
  
 	void Update()
 	{
