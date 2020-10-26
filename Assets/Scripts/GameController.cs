@@ -59,6 +59,7 @@ public class GameController : MonoBehaviour
         else if(state == State.Win)
         {
             paintUI.SetActive(false);
+            wall.GetComponent<WallController>().enabled = false;
             gameOverUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "YOU WON!";
             gameOverUI.SetActive(true);
         } 
