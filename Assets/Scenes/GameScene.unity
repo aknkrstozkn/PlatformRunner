@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: b5f74eb14f2160481a5fb6dac47a09f3, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 15df25c79625d0ccea91fca26c192db9, type: 2}
 --- !u!1 &6746512
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,8 +565,8 @@ GameObject:
   m_Name: Water
   m_TagString: Water
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &329436665
 MeshRenderer:
@@ -852,8 +852,8 @@ GameObject:
   m_Name: StaticObstacle(1)
   m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &478825470
 Transform:
@@ -2226,8 +2226,8 @@ GameObject:
   m_Name: StaticObstacle(2)
   m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1232930900
 Transform:
@@ -3464,8 +3464,8 @@ GameObject:
   m_Name: StaticObstacle (2)
   m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1610291673
 Transform:
@@ -5111,8 +5111,8 @@ GameObject:
   m_Name: RotatingStick
   m_TagString: RotatingStick
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!64 &919132147716633442
 MeshCollider:
@@ -5366,8 +5366,8 @@ GameObject:
   m_Name: RotatingStick (1)
   m_TagString: RotatingStick
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!64 &1196720165040509470
 MeshCollider:
@@ -5536,8 +5536,8 @@ GameObject:
   m_Name: StaticObstacle
   m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!65 &1589327619150439813
 BoxCollider:
@@ -5893,8 +5893,8 @@ GameObject:
   m_Name: Rotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!64 &2448000573476268767
 MeshCollider:
@@ -6234,8 +6234,8 @@ GameObject:
   m_Name: HorizontalObstacle
   m_TagString: MandatoryObstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!136 &4200086175702906217
 CapsuleCollider:
